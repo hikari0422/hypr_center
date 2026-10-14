@@ -766,6 +766,12 @@ dependencies = [
 
 [[package]]
 name = "convert_case"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6245d59a3e82a7fc217c5828a6692dbc6dfb63a0c8c90495621f7b9d79704a0e"
+
+[[package]]
+name = "convert_case"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "633458d4ef8c78b72454de2d54fd6ab2e60f9e02be22f3c6104cdc8a4e0fceb9"
@@ -897,6 +903,19 @@ checksum = "be1e0bca6c3637f992fc1cc7cbc52a78c1ef6db076dbf1059c4323d6a2048376"
 
 [[package]]
 name = "derive_more"
+version = "0.99.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6edb4b64a43d977b8e99788fe3a04d483834fba1215a7e02caa415b626497f7f"
+dependencies = [
+ "convert_case 0.4.0",
+ "proc-macro2",
+ "quote",
+ "rustc_version",
+ "syn 2.0.119",
+]
+
+[[package]]
+name = "derive_more"
 version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d751e9e49156b02b44f9c1815bcb94b984cdcc4396ecc32521c739452808b134"
@@ -910,7 +929,7 @@ version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "799a97264921d8623a957f6c3b9011f3b5492f557bbb7a5a19b7fa6d06ba8dcb"
 dependencies = [
- "convert_case",
+ "convert_case 0.10.0",
  "proc-macro2",
  "quote",
  "rustc_version",
@@ -953,6 +972,12 @@ checksum = "ab8ecd87370524b461f8557c119c405552c396ed91fc0a8eec68679eab26f94a"
 dependencies = [
  "libloading",
 ]
+
+[[package]]
+name = "doc-comment"
+version = "0.3.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "780955b8b195a21ab8e4ac6b60dd1dbdcec1dc6c51c0617964b08c81785e12c9"
 
 [[package]]
 name = "document-features"
@@ -1670,8 +1695,44 @@ checksum = "48ce8546b993eaf241d69ded33b1be6d205dd9857ec879d9d18bd05d3676e144"
 name = "hypr_center"
 version = "0.1.0"
 dependencies = [
+ "hyprland",
  "slint",
  "slint-build",
+ "tokio",
+ "zbus",
+]
+
+[[package]]
+name = "hyprland"
+version = "0.3.13"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f87a8f1cc065d451894dd3916c0bc3fcf9b67b276126c05f27b1db912688dde8"
+dependencies = [
+ "async-trait",
+ "derive_more 0.99.20",
+ "doc-comment",
+ "futures",
+ "hex",
+ "hyprland-macros",
+ "lazy_static",
+ "num-traits",
+ "paste",
+ "regex",
+ "serde",
+ "serde_json",
+ "serde_repr",
+ "strum 0.26.3",
+ "tokio",
+]
+
+[[package]]
+name = "hyprland-macros"
+version = "0.3.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c941d3d52e979612af8cb94e8de49000c7fada2014a7791d173ab41339f4e4eb"
+dependencies = [
+ "quote",
+ "syn 2.0.119",
 ]
 
 [[package]]
@@ -1764,7 +1825,7 @@ dependencies = [
  "scoped-tls-hkt",
  "scopeguard",
  "softbuffer",
- "strum",
+ "strum 0.28.0",
  "vtable",
  "wasm-bindgen",
  "web-sys",
@@ -1780,7 +1841,7 @@ version = "1.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68a578f3e4b681b2b9cbd326d3be19716e2fac51d00a8a5b00c0ef4ae923b5e6"
 dependencies = [
- "derive_more",
+ "derive_more 2.1.1",
  "fontique",
  "htmlparser",
  "icu_decimal",
@@ -1800,7 +1861,7 @@ dependencies = [
  "annotate-snippets",
  "by_address",
  "data-url",
- "derive_more",
+ "derive_more 2.1.1",
  "i-slint-common",
  "icu_normalizer",
  "icu_properties",
@@ -1818,7 +1879,7 @@ dependencies = [
  "rspolib",
  "skrifa",
  "smol_str 0.3.6",
- "strum",
+ "strum 0.28.0",
  "swash",
  "typed-index-collections",
  "unicode-segmentation",
@@ -1838,7 +1899,7 @@ dependencies = [
  "chrono",
  "clru",
  "const-field-offset",
- "derive_more",
+ "derive_more 2.1.1",
  "euclid",
  "i-slint-common",
  "i-slint-core-macros",
@@ -1865,7 +1926,7 @@ dependencies = [
  "scopeguard",
  "skrifa",
  "slab",
- "strum",
+ "strum 0.28.0",
  "swash",
  "sys-locale",
  "taffy",
@@ -1959,7 +2020,7 @@ checksum = "2f8c641e138a2cc96537cac4481f5c7c8bb8dcc66d09acaed269329c8738628a"
 dependencies = [
  "bytemuck",
  "clru",
- "derive_more",
+ "derive_more 2.1.1",
  "euclid",
  "i-slint-common",
  "i-slint-core",
@@ -2625,6 +2686,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "mio"
+version = "1.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1788edb87fdc09c7e26304471e2f5be8cdefb1b6930d6e3985fc02ff53bf86ee"
+dependencies = [
+ "libc",
+ "wasi",
+ "windows-sys 0.61.2",
+]
+
+[[package]]
 name = "moxcms"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3233,6 +3305,12 @@ checksum = "1567535334d6ba2d3cde19221ba9a7bd0fabb3cbd99046ddfb10ae061cfcc889"
 dependencies = [
  "icu_properties",
 ]
+
+[[package]]
+name = "paste"
+version = "1.0.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "57c0d7b74b563b49d38dae00a0c37d4d6de9b432382b2892f0574ddcae73fd0a"
 
 [[package]]
 name = "pastey"
@@ -3997,7 +4075,7 @@ version = "1.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3ea28d4e1ad47d829b91e227f17037fac07a8001668a93fee47ac04f88718ebc"
 dependencies = [
- "derive_more",
+ "derive_more 2.1.1",
  "fontique",
  "i-slint-compiler",
  "spin_on",
@@ -4097,6 +4175,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "socket2"
+version = "0.6.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c3d1e2c7f27f8d4cb10542a02c49005dbd6e93095799d6f3be745fae9f8fedd4"
+dependencies = [
+ "libc",
+ "windows-sys 0.61.2",
+]
+
+[[package]]
 name = "softbuffer"
 version = "0.4.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4168,11 +4256,33 @@ dependencies = [
 
 [[package]]
 name = "strum"
+version = "0.26.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8fec0f0aef304996cf250b31b5a10dee7980c85da9d759361292b8bca5a18f06"
+dependencies = [
+ "strum_macros 0.26.4",
+]
+
+[[package]]
+name = "strum"
 version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9628de9b8791db39ceda2b119bbe13134770b56c138ec1d3af810d045c04f9bd"
 dependencies = [
- "strum_macros",
+ "strum_macros 0.28.0",
+]
+
+[[package]]
+name = "strum_macros"
+version = "0.26.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4c6bee85a5a24955dc440386795aa378cd9cf82acd5f764469152d2270e581be"
+dependencies = [
+ "heck",
+ "proc-macro2",
+ "quote",
+ "rustversion",
+ "syn 2.0.119",
 ]
 
 [[package]]
@@ -4427,11 +4537,30 @@ checksum = "fd3ca314f692efd6c868f8408f53fe444634a845f96c028b97d35f6a1f79f0ee"
 
 [[package]]
 name = "tokio"
-version = "1.53.2"
+version = "1.53.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e95f91fcc7a621e8b030f6aa23c71fe9838ae2fb4d8118b75602a328f5144044"
+checksum = "ce3335fa71841cda333a58d7615b03901380ecf09d59b3296d21f8bbac0dde4e"
 dependencies = [
+ "bytes",
+ "libc",
+ "mio",
+ "parking_lot",
  "pin-project-lite",
+ "signal-hook-registry",
+ "socket2",
+ "tokio-macros",
+ "windows-sys 0.61.2",
+]
+
+[[package]]
+name = "tokio-macros"
+version = "2.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "78773a2a397f451582ce068015985c33193cf6dea8b74d2a639fe457b2f07b0e"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 3.0.7",
 ]
 
 [[package]]
@@ -4723,6 +4852,12 @@ dependencies = [
  "same-file",
  "winapi-util",
 ]
+
+[[package]]
+name = "wasi"
+version = "0.11.1+wasi-snapshot-preview1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ccf3ec651a847eb01de73ccad15eb7d99f80485de043efb2f370cd654f4ea44b"
 
 [[package]]
 name = "wasip2"

@@ -8,7 +8,10 @@ publish = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+hyprland = "0.3.13"
 slint = "1.18.1"
+tokio = "1.53.3"
+zbus = "5.19.0"
 
 [build-dependencies]
 slint-build = "1.18.1"
