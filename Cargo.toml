@@ -8,10 +8,15 @@ publish = false
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+alpm = "5.0.2"
 hyprland = "0.3.13"
 slint = "1.18.1"
 tokio = "1.53.3"
 zbus = "5.19.0"
+mlua = { version = "0.12", features = ["lua54", "vendored"] }
+nmrs = "3.5.7"
+bluer = { version = "0.17.4", features = ["full"] }
+
 
 [build-dependencies]
 slint-build = "1.18.1"
