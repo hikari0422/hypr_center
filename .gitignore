@@ -1,2 +1,6 @@
 target/
 .cargo/
+*.xml
+*.md
+
+!README.md
