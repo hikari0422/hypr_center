@@ -1,0 +1,48 @@
+import { Title } from "../components.slint";
+import { FilledButton, OutlineButton } from "@material";
+
+export component Wizard inherits Window {
+    min_width: 630px;
+    min_height: 480px;
+    background: #17131e;
+
+    VerticalLayout {
+        padding: 30px;
+        spacing: 20px;
+
+        Title {
+            title: "Welcome!";
+        }
+
+        Rectangle {
+            VerticalLayout {
+                spacing: 10px;
+                Text {
+                    text: "歡迎使用 HyprCenter 安裝嚮導。";
+                    color: #b4b0bc;
+                    font-size: 14px;
+                }
+                Text {
+                    text: "我們將協助您快速設定 Hyprland 環境與系統偏好。";
+                    color: #b4b0bc;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        HorizontalLayout {
+            Rectangle {}
+            spacing: 12px;
+
+            OutlineButton {
+                text: "關閉";
+                height: 40px;
+            }
+
+            FilledButton {
+                text: "下一步";
+                height: 40px;
+            }
+        }
+    }
+}
